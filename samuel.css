@@ -1,163 +1,118 @@
-/* Contenedor del formulario */
-.contact-form-container {
-    width: 90%;
-    max-width: 400px;
-    background: #fff;
-    padding: 25px;
+/* Estilos base */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.contenedor-principal {
+    background-image: url('img/panaderia.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.contenedor-principal::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+}
+
+.formulario-contacto {
+    background: rgba(255, 255, 255, 0.85);
+    padding: 2.5rem;
     border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    margin: 30px auto;
-    box-sizing: border-box;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+    z-index: 2;
 }
 
-.contact-form-container h2 {
-    margin: 0 0 20px 0;
+.formulario-contacto h2 {
+    margin-top: 0;
     color: #333;
-    font-size: 1.5em;
+    text-align: center;
+    margin-bottom: 1.5rem;
 }
 
-/* Grupos de formulario */
-.contact-form-group {
-    margin-bottom: 20px;
-    text-align: left;
+.grupo-formulario {
+    margin-bottom: 1.5rem;
 }
 
-.contact-form-group label {
+.grupo-formulario label {
     display: block;
-    margin-bottom: 8px;
-    font-weight: 500;
+    margin-bottom: 0.5rem;
     color: #555;
+    font-weight: 500;
 }
 
-/* Campos de entrada */
-.contact-form-input {
+.grupo-formulario input,
+.grupo-formulario textarea {
     width: 100%;
-    padding: 12px;
-    margin: 0;
+    padding: 0.8rem;
     border: 1px solid #ddd;
     border-radius: 5px;
-    font-size: 16px;
-    background: #fafafa;
-    outline: none;
-    transition: all 0.3s ease-in-out;
+    font-size: 1rem;
+    background: rgba(255, 255, 255, 0.7);
     box-sizing: border-box;
-    height: 48px;
-    line-height: 24px;
 }
 
-/* Textarea con altura inicial mayor y redimensionamiento fluido */
-.contact-form-textarea {
-    width: 100%;
-    padding: 12px;
-    margin: 0;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    font-size: 16px;
-    background: #fafafa;
-    outline: none;
-    transition: all 0.3s ease-in-out;
-    box-sizing: border-box;
-    min-height: 120px; /* Altura inicial mayor */
-    height: 120px; /* Altura inicial fija */
+.grupo-formulario textarea {
+    min-height: 120px;
     resize: vertical;
-    overflow-y: auto;
-    line-height: 1.5;
 }
 
-/* Transición suave al redimensionar */
-.contact-form-textarea {
-    transition: height 0.2s ease-out, border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-}
-
-.contact-form-input:focus, 
-.contact-form-textarea:focus {
-    border: 1px solid #d2691e;
-    box-shadow: 0 0 0 2px rgba(210, 105, 30, 0.2);
-}
-
-/* Botón de enviar */
-.contact-form-button {
+button[type="submit"] {
     width: 100%;
-    padding: 14px;
-    background: #d2691e;
+    padding: 1rem;
+    background-color: #d2691e;
     color: white;
     border: none;
     border-radius: 5px;
-    font-size: 16px;
-    font-weight: 500;
+    font-size: 1rem;
     cursor: pointer;
-    transition: background 0.3s ease-in-out;
-    margin-top: 10px;
-    height: 48px;
+    transition: background-color 0.3s;
 }
 
-.contact-form-button:hover {
-    background: #a0522d;
+button[type="submit"]:hover {
+    background-color: #b35917;
 }
 
-/* Diseño responsivo */
+/* Media Queries para Responsividad */
 @media (max-width: 768px) {
-    .contact-form-container {
-        width: 85%;
-        padding: 20px;
+    .formulario-contacto {
+        padding: 1.5rem;
+        width: 95%;
     }
     
-    .contact-form-group {
-        margin-bottom: 15px;
-    }
-    
-    .contact-form-input {
-        padding: 10px;
-        font-size: 15px;
-        height: 44px;
-    }
-    
-    .contact-form-textarea {
-        padding: 10px;
-        font-size: 15px;
-        min-height: 100px;
-        height: 100px;
-    }
-    
-    .contact-form-button {
-        padding: 12px;
-        height: 44px;
+    .contenedor-principal {
+        background-attachment: scroll;
     }
 }
 
 @media (max-width: 480px) {
-    .contact-form-container {
-        width: 90%;
-        padding: 15px;
-        margin: 20px auto;
+    .formulario-contacto {
+        padding: 1.2rem;
     }
     
-    .contact-form-container h2 {
-        font-size: 1.3em;
-        margin-bottom: 15px;
+    .grupo-formulario input,
+    .grupo-formulario textarea {
+        padding: 0.6rem;
     }
     
-    .contact-form-group label {
-        font-size: 14px;
-        margin-bottom: 6px;
-    }
-    
-    .contact-form-input {
-        padding: 8px;
-        font-size: 14px;
-        height: 40px;
-    }
-    
-    .contact-form-textarea {
-        padding: 8px;
-        font-size: 14px;
-        min-height: 80px;
-        height: 80px;
-    }
-    
-    .contact-form-button {
-        padding: 12px;
-        font-size: 15px;
-        height: 40px;
+    button[type="submit"] {
+        padding: 0.8rem;
     }
 }
