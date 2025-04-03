@@ -1,29 +1,163 @@
-.container {
-    width: 50%;
-    margin: auto;
+/* Contenedor del formulario */
+.contact-form-container {
+    width: 90%;
+    max-width: 400px;
     background: #fff;
-    padding: 20px;
+    padding: 25px;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin: 30px auto;
+    box-sizing: border-box;
 }
 
-input, textarea {
+.contact-form-container h2 {
+    margin: 0 0 20px 0;
+    color: #333;
+    font-size: 1.5em;
+}
+
+/* Grupos de formulario */
+.contact-form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.contact-form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #555;
+}
+
+/* Campos de entrada */
+.contact-form-input {
     width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-    border: 1px solid #ccc;
+    padding: 12px;
+    margin: 0;
+    border: 1px solid #ddd;
     border-radius: 5px;
+    font-size: 16px;
+    background: #fafafa;
+    outline: none;
+    transition: all 0.3s ease-in-out;
+    box-sizing: border-box;
+    height: 48px;
+    line-height: 24px;
 }
 
-button {
+/* Textarea con altura inicial mayor y redimensionamiento fluido */
+.contact-form-textarea {
+    width: 100%;
+    padding: 12px;
+    margin: 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    background: #fafafa;
+    outline: none;
+    transition: all 0.3s ease-in-out;
+    box-sizing: border-box;
+    min-height: 120px; /* Altura inicial mayor */
+    height: 120px; /* Altura inicial fija */
+    resize: vertical;
+    overflow-y: auto;
+    line-height: 1.5;
+}
+
+/* Transición suave al redimensionar */
+.contact-form-textarea {
+    transition: height 0.2s ease-out, border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.contact-form-input:focus, 
+.contact-form-textarea:focus {
+    border: 1px solid #d2691e;
+    box-shadow: 0 0 0 2px rgba(210, 105, 30, 0.2);
+}
+
+/* Botón de enviar */
+.contact-form-button {
+    width: 100%;
+    padding: 14px;
     background: #d2691e;
     color: white;
     border: none;
-    padding: 10px 20px;
-    cursor: pointer;
     border-radius: 5px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+    margin-top: 10px;
+    height: 48px;
 }
 
-button:hover {
+.contact-form-button:hover {
     background: #a0522d;
+}
+
+/* Diseño responsivo */
+@media (max-width: 768px) {
+    .contact-form-container {
+        width: 85%;
+        padding: 20px;
+    }
+    
+    .contact-form-group {
+        margin-bottom: 15px;
+    }
+    
+    .contact-form-input {
+        padding: 10px;
+        font-size: 15px;
+        height: 44px;
+    }
+    
+    .contact-form-textarea {
+        padding: 10px;
+        font-size: 15px;
+        min-height: 100px;
+        height: 100px;
+    }
+    
+    .contact-form-button {
+        padding: 12px;
+        height: 44px;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-form-container {
+        width: 90%;
+        padding: 15px;
+        margin: 20px auto;
+    }
+    
+    .contact-form-container h2 {
+        font-size: 1.3em;
+        margin-bottom: 15px;
+    }
+    
+    .contact-form-group label {
+        font-size: 14px;
+        margin-bottom: 6px;
+    }
+    
+    .contact-form-input {
+        padding: 8px;
+        font-size: 14px;
+        height: 40px;
+    }
+    
+    .contact-form-textarea {
+        padding: 8px;
+        font-size: 14px;
+        min-height: 80px;
+        height: 80px;
+    }
+    
+    .contact-form-button {
+        padding: 12px;
+        font-size: 15px;
+        height: 40px;
+    }
 }
