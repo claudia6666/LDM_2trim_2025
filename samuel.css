@@ -1,25 +1,24 @@
-/* Estilos base */
-html, body {
-    height: 100%;
+/* Quito los margenses para que la imagen se vea en toda la pantalla sin espacios en blanco */
+body {
     margin: 0;
     padding: 0;
 }
 
+/* Contenedor con la imagen de fondo */
 .contenedor-principal {
     background-image: url('img/panaderia.jpg');
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
     min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    position: relative; 
 }
 
+/* Hacemos que el div que esta por enciuma de la imagen de fondo sea negro con trasparencia para que la imagen no sea tan brillanete y que sea mas oscura haciendo que resalte el formulario */
 .contenedor-principal::before {
-    content: '';
+    content: ''; 
     position: absolute;
     top: 0;
     left: 0;
@@ -29,28 +28,24 @@ html, body {
     z-index: 1;
 }
 
+/* Estilos del formulario de contacto */
 .formulario-contacto {
-    background: rgba(255, 255, 255, 0.85);
-    padding: 2.5rem;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    background: rgba(255, 255, 255, 0.85); 
+    padding: 2.5rem; 
+    border-radius: 10px; 
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); 
     width: 90%;
     max-width: 500px;
     position: relative;
     z-index: 2;
 }
 
-.formulario-contacto h2 {
-    margin-top: 0;
-    color: #333;
-    text-align: center;
-    margin-bottom: 1.5rem;
-}
-
+/* Estructura de cada grupo de campos del formulario */
 .grupo-formulario {
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.5rem; 
 }
 
+/* Estilos para las etiquetas de los campos */
 .grupo-formulario label {
     display: block;
     margin-bottom: 0.5rem;
@@ -58,6 +53,7 @@ html, body {
     font-weight: 500;
 }
 
+/* Estilos comunes para inputs y textareas */
 .grupo-formulario input,
 .grupo-formulario textarea {
     width: 100%;
@@ -69,50 +65,115 @@ html, body {
     box-sizing: border-box;
 }
 
+/* Estilos específicos para el textarea */
 .grupo-formulario textarea {
     min-height: 120px;
     resize: vertical;
 }
 
-button[type="submit"] {
-    width: 100%;
-    padding: 1rem;
-    background-color: #d2691e;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background-color 0.3s;
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Lo siguiente ha sido sacado de distintos recurson de internet especificados mas abajo */
+
+
+
+
+
+
+/* Estilo del título del formulario encontrado de el recurso de tutulos plantillashtmlgratis.com */
+.formulario-contacto h2 {
+    margin-top: 0;
+    color: #5a3921;
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2.2rem;
+    font-weight: 700;
+    position: relative;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-family: 'Playfair Display', serif;
+    animation: fadeInDown 0.8s ease-out;
 }
 
-button[type="submit"]:hover {
-    background-color: #b35917;
+.formulario-contacto h2::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, #d2691e, #f4a460);
+    margin: 0.8rem auto 0;
+    border-radius: 2px;
+    transition: all 0.3s ease;
 }
 
-/* Media Queries para Responsividad */
+.formulario-contacto h2:hover::after {
+    width: 120px;
+    background: linear-gradient(90deg, #f4a460, #d2691e);
+}
+
+.formulario-contacto h2 {
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.1), 
+                 3px 3px 5px rgba(0,0,0,0.05);
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 @media (max-width: 768px) {
-    .formulario-contacto {
-        padding: 1.5rem;
-        width: 95%;
+    .formulario-contacto h2 {
+        font-size: 1.8rem;
+        letter-spacing: 1px;
+        margin-bottom: 1.5rem;
     }
     
-    .contenedor-principal {
-        background-attachment: scroll;
+    .formulario-contacto h2::after {
+        height: 3px;
+        width: 60px;
+    }
+    
+    .formulario-contacto h2:hover::after {
+        width: 80px;
     }
 }
 
-@media (max-width: 480px) {
-    .formulario-contacto {
-        padding: 1.2rem;
-    }
-    
-    .grupo-formulario input,
-    .grupo-formulario textarea {
-        padding: 0.6rem;
-    }
-    
-    button[type="submit"] {
-        padding: 0.8rem;
-    }
-}
+/* Estilos del botón de enviar del recurso: cssbuttons.io */
+button {
+    background: #ffe06e;
+    font-family: inherit;
+    padding: 0.6em 1.3em;
+    font-weight: 900;
+    font-size: 18px;
+    border: 3px solid black;
+    border-radius: 0.4em;
+    box-shadow: 0.1em 0.1em;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    transform: translate(-0.05em, -0.05em);
+    box-shadow: 0.15em 0.15em;
+  }
+  
+  button:active {
+    transform: translate(0.05em, 0.05em);
+    box-shadow: 0.05em 0.05em;
+  }
