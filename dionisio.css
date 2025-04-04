@@ -32,8 +32,8 @@ body{
     cursor: pointer;
 }
 .header .logo {
-    height: 50px;
-    width: 50px;
+    height: 75px;
+    width: 75px;
     transition: all 0.3s;
 }
 .header .logo:hover{
@@ -209,5 +209,53 @@ body{
     text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
     
 }
+/**/
+.section {
+    background-color: wheat; /* Fondo oscuro */
+    padding: 20px 0;
+}
+
+.custom-borders-divider-style-1 {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.custom-borders-divider-style-1 .col-lg-3 {
+    border-right: 1px solid rgba(255, 255, 255, 0.2); /* Línea divisoria */
+    padding: 20px;
+}
+
+.custom-borders-divider-style-1 .col-lg-3:last-child {
+    border-right: none; /* Elimina la línea en el último */
+}
+
+.custom-borders-divider-style-1 a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-decoration: none;
+    color: brown;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 20px 0;
+    transition: all 0.3s ease;
+}
+
+.custom-borders-divider-style-1 a i {
+    font-size: 24px;
+    margin-right: 10px;
+}
+
+/* Efecto hover */
+.custom-borders-divider-style-1 a:hover {
+    color: #1DB954; /* Verde Spotify */
+}
+
+.custom-spotify-hover-effect:hover { color: #1DB954; }
+.custom-itunes-hover-effect:hover { color: #FA57C1; }
+.custom-amazon-hover-effect:hover { color: #FF9900; }
+.custom-googlemusic-hover-effect:hover { color: #FF0000; }
+
 
 
