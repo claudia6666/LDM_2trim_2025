@@ -9,26 +9,14 @@ body {
     background-image: url('img/panaderia.jpg');
     background-size: cover;
     background-position: center;
-    min-height: 100vh;
+    min-height: 100vh; /* Esto hace que coja el 100% en cualquier pantalla*/
     display: flex; 
     justify-content: center; 
     align-items: center; 
     position: relative; 
 }
 
-/* Hacemos que el div que esta por enciuma de la imagen de fondo sea negro con trasparencia para que la imagen no sea tan brillanete y que sea mas oscura haciendo que resalte el formulario */
-.contenedor-principal::before {
-    content: ''; 
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.4);
-    z-index: 1;
-}
-
-/* Estilos del formulario de contacto */
+/* Estilos del div en el que esta el formulario */
 .formulario-contacto {
     background: rgba(255, 255, 255, 0.85); 
     padding: 2.5rem; 
@@ -36,40 +24,59 @@ body {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); 
     width: 90%;
     max-width: 500px;
-    position: relative;
-    z-index: 2;
 }
 
-/* Estructura de cada grupo de campos del formulario */
+/* Hace que tengan un espaciado para que se vea mejor */
 .grupo-formulario {
-    margin-bottom: 1.5rem; 
+    margin-bottom: 20px; 
 }
 
-/* Estilos para las etiquetas de los campos */
-.grupo-formulario label {
-    display: block;
-    margin-bottom: 0.5rem;
-    color: #555;
-    font-weight: 500;
-}
-
-/* Estilos comunes para inputs y textareas */
+/* Estilos de los imputs */
 .grupo-formulario input,
 .grupo-formulario textarea {
     width: 100%;
     padding: 0.8rem;
     border: 1px solid #ddd;
     border-radius: 5px;
-    font-size: 1rem;
+    font-size: medium;
     background: rgba(255, 255, 255, 0.7);
-    box-sizing: border-box;
+    box-sizing: border-box; 
 }
 
-/* Estilos específicos para el textarea */
-.grupo-formulario textarea {
-    min-height: 120px;
-    resize: vertical;
+
+/*Color para dentro del imput*/
+.texto1{
+    font-size: 18px;
+    color: #FFB3BA;
+    font-family: fantasy;
+    text-align: center;
+    padding: 8px;
 }
+.texto2{
+    font-size: 25px;
+    color: #BAE1FF;
+    font-family: initial;
+    text-align: center;
+    padding: 8px;
+}
+.texto3{
+    font-size: 18px;
+    color: #DCC6E0;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-align: center;
+    padding: 8px;
+}
+
+/*Color para los títulos que hay encima de los inputs*/
+.TitulInputs{
+    font-size: 25px;
+    color: #5a3921;
+    font-family: fantasy;
+}
+
+
+
+
 
 
 
