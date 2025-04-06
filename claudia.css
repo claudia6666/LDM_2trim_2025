@@ -11,20 +11,14 @@ h1, h2 {
 }
 
 .galeria {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-    margin-top: 30px;
+    text-align: center;
 }
 
 .galeria img {
+    margin: 10px;
     width: 200px;
     height: 150px;
-    object-fit: cover;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    transition: transform 0.3s ease;
+    
 }
 
 .galeria img:hover {
